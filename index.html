@@ -63,20 +63,19 @@
 			const cube = new THREE.Mesh( geometry, material );
 
 			const loader = new GLTFLoader();
-			loader.load( 'model.glb', function ( gltf ) {
-
-			scene.add( gltf.scene );
-		
-			}, undefined, function ( error ) {
-			
-				console.error( error );
-			
-			} );
 			
 			
 			scene.add( line );
 			scene.add( line2 );
 			scene.add( cube );
+			
+			loader.load( 'abstract_core.glb', function ( gltf ) {
+			scene.add( gltf.scene );
+			}, undefined, function ( error ) {
+			
+				console.error( error );
+			
+			} );
 			
 			// camera.position.z = 5;
 			
