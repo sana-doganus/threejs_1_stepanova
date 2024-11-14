@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Three.js_1</title>
+		<title>Three.js_111</title>
 		<style>
 			body { margin: 0; }
 		</style>
@@ -22,7 +22,19 @@
 
 			const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			const material = new THREE.MeshBasicMaterial( { color: 0xd2d8f0 } );
+			const line_material = new THREE.LineBasicMaterial( { color: 0xe2f5e6 } );
+
+			const points = [];
+			points.push( new THREE.Vector3( - 10, 0, 0 ) );
+			points.push( new THREE.Vector3( 0, 10, 0 ) );
+			points.push( new THREE.Vector3( 10, 0, 0 ) );
+	
+			const geometry2 = new THREE.BufferGeometry().setFromPoints( points );
+			const line = new THREE.Line( geometry2, material );
+			
 			const cube = new THREE.Mesh( geometry, material );
+			
+			scene.add( line );
 			scene.add( cube );
 			
 			camera.position.z = 5;
