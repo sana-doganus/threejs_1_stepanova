@@ -28,13 +28,22 @@
 			points.push( new THREE.Vector3( - 10, 10, 0 ) );
 			points.push( new THREE.Vector3( 0, 20, 0 ) );
 			points.push( new THREE.Vector3( 10, 10, 0 ) );
+
+			const points2 = [];
+			points.push( new THREE.Vector3( - 10, -10, 0 ) );
+			points.push( new THREE.Vector3( 0, -20, 0 ) );
+			points.push( new THREE.Vector3( 10, -10, 0 ) );
 	
 			const geometry2 = new THREE.BufferGeometry().setFromPoints( points );
+			const geometry3 = new THREE.BufferGeometry().setFromPoints( points2 );
+			
 			const line = new THREE.Line( geometry2, line_material );
+			const line2 = new THREE.Line( geometry3, line_material );
 			
 			const cube = new THREE.Mesh( geometry, material );
 			
 			scene.add( line );
+			scene.add( line2 );
 			scene.add( cube );
 			
 			// camera.position.z = 5;
@@ -45,6 +54,8 @@
 				cube.rotation.y += 0.01;
 				line.rotation.x -= 0.01;
 				line.rotation.y -= 0.01;
+				line2.rotation.x += 0.01;
+				line2.rotation.y += 0.01;
 				renderer.render( scene, camera );
 			}
 			animate();
