@@ -21,6 +21,7 @@
 	<body>
 		<script type="module">
 			import * as THREE from 'https://cdn.jsdelivr.net/npm/three/build/three.module.js';
+			import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 			const scene = new THREE.Scene();
 			// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 			const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
@@ -52,6 +53,9 @@
 			const line2 = new THREE.Line( geometry3, line_material );
 			
 			const cube = new THREE.Mesh( geometry, material );
+
+			const loader = new GLTFLoader();
+			
 			
 			scene.add( line );
 			scene.add( line2 );
