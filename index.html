@@ -55,6 +55,15 @@
 			const cube = new THREE.Mesh( geometry, material );
 
 			const loader = new GLTFLoader();
+			loader.load( 'scene.gltf', function ( gltf ) {
+
+			scene.add( gltf.scene );
+		
+			}, undefined, function ( error ) {
+			
+				console.error( error );
+			
+			} );
 			
 			
 			scene.add( line );
