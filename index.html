@@ -64,18 +64,19 @@
 
 			const loader = new GLTFLoader();
 			
-			
-			scene.add( line );
-			scene.add( line2 );
-			scene.add( cube );
-			
 			loader.load( 'abstract_core.glb', function ( gltf ) {
 			scene.add( gltf.scene );
+			gltf.asset;
 			}, undefined, function ( error ) {
 			
 				console.error( error );
 			
 			} );
+			
+			scene.add( line );
+			scene.add( line2 );
+			scene.add( cube );
+			
 			
 			// camera.position.z = 5;
 			
