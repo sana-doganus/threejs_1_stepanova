@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Three.js_111</title>
+		<title>Three.js_1</title>
 		<style>
 			body { margin: 0; }
 		</style>
@@ -30,9 +30,9 @@
 			points.push( new THREE.Vector3( 10, 0, 0 ) );
 	
 			const geometry2 = new THREE.BufferGeometry().setFromPoints( points );
-			const line = new THREE.Line( geometry2, material );
+			const line = new THREE.Line( geometry2, line_material );
 			
-			const cube = new THREE.Mesh( geometry, material );
+			// const cube = new THREE.Mesh( geometry, material );
 			
 			scene.add( line );
 			scene.add( cube );
@@ -41,8 +41,8 @@
 			
 			function animate() {
 				requestAnimationFrame( animate );
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
+				// cube.rotation.x += 0.01;
+				// cube.rotation.y += 0.01;
 				renderer.render( scene, camera );
 			}
 			animate();
