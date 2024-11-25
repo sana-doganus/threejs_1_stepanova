@@ -74,14 +74,6 @@
   			console.log(dumpObject(root).join('\n'));
 
 			shrek = root.getObjectByName('Sketchfab_model');
-			if(shrek) { 
-				console.log("SHREK = "+shrek.scale.x+", "+shrek.scale.y);
-				shrek.position.x = 0;
-				shrek.position.y = 0;
-				shrek.scale.x = 10;
-				shrek.scale.y = 10;
-				shrek.scale.z = 10;
-			}
 			},
 			function ( xhr ) {
 				console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -106,6 +98,14 @@
 				line.rotation.y -= 0.01;
 				line2.rotation.x += 0.01;
 				line2.rotation.y += 0.01;
+
+				if(shrek) { 
+				shrek.position.x = 0;
+				shrek.position.y = 0;
+				shrek.scale.x = 10;
+				shrek.scale.y = 10;
+				shrek.scale.z = 10;
+				}
 				
 				
 				renderer.render( scene, camera );
