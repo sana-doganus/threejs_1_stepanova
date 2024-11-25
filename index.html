@@ -68,7 +68,7 @@
 
 			const loader = new GLTFLoader();
 			let shrek;
-			loader.load( 'abstract.glb', function ( gltf ) {
+			loader.load( 'tiger.glb', function ( gltf ) {
 			const root = gltf.scene;
 			scene.add(root);
   			console.log(dumpObject(root).join('\n'));
@@ -81,6 +81,14 @@
 			function ( error ) {
 				console.error( error );
 			} );
+
+			if(shrek) { 
+				shrek.position.x = 5;
+				shrek.position.y = 0;
+				shrek.scale.x = 1;
+				shrek.scale.y = 1;
+				shrek.scale.z = 1;
+				}
 			
 			scene.add( line );
 			scene.add( line2 );
@@ -99,14 +107,9 @@
 				line2.rotation.x += 0.01;
 				line2.rotation.y += 0.01;
 
-				if(shrek) { 
-				shrek.position.x = 0;
-				shrek.position.y = 0;
-				shrek.scale.x = 10;
-				shrek.scale.y = 10;
-				shrek.scale.z = 10;
+				if (shrek) {
+					shrek.rotation.x += 0.01;
 				}
-				
 				
 				renderer.render( scene, camera );
 			}
