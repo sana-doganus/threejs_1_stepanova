@@ -74,6 +74,12 @@
   			console.log(dumpObject(root).join('\n'));
 
 			shrek = root.getObjectByName('Sketchfab_model');
+			shrek.position.x = 25;
+			shrek.position.y = -5;
+			shrek.scale.x = 10;
+			shrek.scale.y = 10;
+			shrek.scale.z = 10;
+				
 			},
 			function ( xhr ) {
 				console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -86,12 +92,6 @@
 			scene.add( line2 );
 			scene.add( cube );
 			scene.add( light );
-
-			shrek.position.x = 25;
-			shrek.position.y = -5;
-			shrek.scale.x = 10;
-			shrek.scale.y = 10;
-			shrek.scale.z = 10;
 			
 			
 			// camera.position.z = 5;
