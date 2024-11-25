@@ -64,7 +64,7 @@
 
 			const loader = new GLTFLoader();
 			let shrek;
-			loader.load( 'tiger.glb', function ( gltf ) {
+			loader.load( 'scene.gltf', function ( gltf ) {
 			const root = gltf.scene;
 			scene.add(root);
   			console.log(dumpObject(root).join('\n'));
