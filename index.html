@@ -79,6 +79,8 @@
 
 			shrek = root.getObjectByName('Sketchfab_model');
 			shrek2 = root2.getObjectByName('Sketchfab_model');
+			if(shrek) { console.log("SHREK = "+shrek.position.x)}
+			if(shrek2) { console.log("SHREK2 = "+shrek2.position.x)}
 			},
 			function ( xhr ) {
 				console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -108,14 +110,14 @@
 					shrek.scale.x = 0.5;
 					shrek.scale.y = 0.5;
 					shrek.scale.z = 0.5;
-					shrek.position.x = -5;
+					shrek.position.x = -10;
 					//shrek.poisition.y = 5;
 				}
 				if (shrek2) {
 					shrek2.scale.x = 0.5;
 					shrek2.scale.y = 0.5;
 					shrek2.scale.z = 0.5;
-					shrek2.position.x = 5;
+					shrek2.position.x = 10;
 					//shrek2.poisition.y = 5;
 				}
 				
