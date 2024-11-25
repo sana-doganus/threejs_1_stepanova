@@ -81,14 +81,6 @@
 			function ( error ) {
 				console.error( error );
 			} );
-
-			if(shrek) { 
-				shrek.position.x = 5;
-				shrek.position.y = 0;
-				shrek.scale.x = 1;
-				shrek.scale.y = 1;
-				shrek.scale.z = 1;
-				}
 			
 			scene.add( line );
 			scene.add( line2 );
@@ -108,6 +100,11 @@
 				line2.rotation.y += 0.01;
 
 				if (shrek) {
+					shrek.position.x = 5;
+					shrek.position.y = 0;
+					shrek.scale.x = 5;
+					shrek.scale.y = 5;
+					shrek.scale.z = 5;
 					shrek.rotation.x += 0.01;
 				}
 				
