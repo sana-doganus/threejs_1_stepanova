@@ -62,6 +62,10 @@
 			
 			const cube = new THREE.Mesh( geometry, material );
 
+			const l_color = 0xFFFFFF;
+			const l_intensity = 1;
+			const light = new THREE.AmbientLight(l_color, l_intensity);
+
 			const loader = new GLTFLoader();
 			let shrek;
 			loader.load( 'scene.gltf', function ( gltf ) {
@@ -81,6 +85,7 @@
 			scene.add( line );
 			scene.add( line2 );
 			scene.add( cube );
+			scene.add( light );
 			
 			
 			// camera.position.z = 5;
