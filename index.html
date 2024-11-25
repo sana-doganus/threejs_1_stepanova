@@ -67,27 +67,19 @@
 			const light = new THREE.AmbientLight(l_color, l_intensity);
 
 			const loader = new GLTFLoader();
-			let shrek; let shrek2;
-			loader.load( 'fish.glb', function ( gltf ) {
+			let shrek;
+			loader.load( 'fibonacci.glb', function ( gltf ) {
 			const root = gltf.scene;
-			const root2 = gltf.scene;
 			scene.add(root);
-			scene.add(root2);
   			console.log(dumpObject(root).join('\n'));
-				
-  			console.log(dumpObject(root2).join('\n'));
 
 			shrek = root.getObjectByName('Sketchfab_model');
-			shrek2 = root2.getObjectByName('Sketchfab_model');
 			if(shrek) { 
-				shrek.position.x = -30;
-				shrek.position.y = -30;
-				console.log("SHREK = "+shrek.position.x);
-			}
-			if(shrek2) {
-				shrek2.position.x = 30;
-				shrek2.position.y = -30;
-				console.log("SHREK2 = "+shrek2.position.x)
+				shrek.position.x = 0;
+				shrek.position.y = 0;
+				shrek.scale.x = 5;
+				shrek.scale.y = 5;
+				shrek.scale.z = 5;
 			}
 			},
 			function ( xhr ) {
@@ -113,19 +105,6 @@
 				line.rotation.y -= 0.01;
 				line2.rotation.x += 0.01;
 				line2.rotation.y += 0.01;
-
-				if (shrek) {
-					shrek.scale.x = 0.5;
-					shrek.scale.y = 0.5;
-					shrek.scale.z = 0.5;
-					//shrek.poisition.y = 5;
-				}
-				if (shrek2) {
-					shrek2.scale.x = 0.5;
-					shrek2.scale.y = 0.5;
-					shrek2.scale.z = 0.5;
-					//shrek2.poisition.y = 5;
-				}
 				
 				renderer.render( scene, camera );
 			}
