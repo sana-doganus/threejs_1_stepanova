@@ -67,13 +67,14 @@
 			const light = new THREE.AmbientLight(l_color, l_intensity);
 
 			const loader = new GLTFLoader();
-			let shrek;
-			loader.load( 'scene.gltf', function ( gltf ) {
+			let shrek; let shrek2;
+			loader.load( 'fish.glb', function ( gltf ) {
 			const root = gltf.scene;
 			scene.add(root);
   			console.log(dumpObject(root).join('\n'));
 
 			shrek = root.getObjectByName('Sketchfab_model');
+			shrek2 = root.getObjectByName('Sketchfab_model');
 			},
 			function ( xhr ) {
 				console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -100,9 +101,18 @@
 				line2.rotation.y += 0.01;
 
 				if (shrek) {
-				shrek.scale.x = 10;
-				shrek.scale.y = 10;
-				shrek.scale.z = 10;
+					shrek.scale.x = 10;
+					shrek.scale.y = 10;
+					shrek.scale.z = 10;
+					shrek.position.x = 15;
+					shrek.poisition.y = 5;
+				}
+				if (shrek2) {
+					shrek2.scale.x = 10;
+					shrek2.scale.y = 10;
+					shrek2.scale.z = 10;
+					shrek2.position.x = -15;
+					shrek2.poisition.y = 5;
 				}
 				
 				renderer.render( scene, camera );
