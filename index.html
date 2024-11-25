@@ -74,6 +74,8 @@
 			scene.add(root);
 			scene.add(root2);
   			console.log(dumpObject(root).join('\n'));
+				
+  			console.log(dumpObject(root2).join('\n'));
 
 			shrek = root.getObjectByName('Sketchfab_model');
 			shrek2 = root2.getObjectByName('Sketchfab_model');
@@ -106,7 +108,7 @@
 					shrek.scale.x = 1;
 					shrek.scale.y = 1;
 					shrek.scale.z = 1;
-					shrek.position.x = 5;
+					shrek.position.x = -5;
 					//shrek.poisition.y = 5;
 				}
 				if (shrek2) {
